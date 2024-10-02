@@ -1,0 +1,116 @@
+body{
+  background-color: rgb(13, 122, 122);
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  position: fixed;
+  width: 100%;
+  background-color:grey;
+}
+
+#menuIcon {
+  font-size: 2rem;
+  cursor: pointer;
+  display: none;
+}
+
+#menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#menu li {
+  position: relative;
+  margin-right: 20px;
+}
+
+#menu li ul#subMenu, #menu li ul#subMenu2{
+  display: none;
+  margin-top: 1rem;
+  list-style: none;
+}
+
+#menu li:hover ul#subMenu {
+    display: block;
+    position: relative;
+}
+
+#subMenu li:hover ul#subMenu2 {
+  display: block;
+  position: relative;
+}
+
+#menu li ul#subMenu li {
+    margin-right: 0;
+
+}
+
+#menu li ul#subMenu li a, 
+#menu li ul#subMenu2 li a {
+    display: block;
+}
+
+#menu li ul#subMenu li:hover ul#subMenu2  {
+  display: block;
+  top: 0;
+  left: 4rem;
+}
+
+a:visited{
+  color: white;
+}
+#menu li a {
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+}
+#subMenu li a {
+    padding: 8px 16px;
+}
+
+
+@media screen and (max-width: 768px) {
+  #menuIcon {
+    display: block;
+    color: white;
+  }
+  #menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: grey;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    padding: 0;
+  }
+
+  #menu.active {
+    display: flex;
+  }
+
+  #menu li {
+  width: 100%;
+  margin: 0;
+
+  }
+
+  #menu li ul#subMenu, #menu li ul#subMenu2 {
+    position: static;
+    margin-top: 0;
+  }
+
+  #menu li:hover ul#subMenu {
+    display: block;
+  }
+
+  #menu li ul#subMenu li:hover ul#subMenu2 {
+    display: block;
+  }
+}
